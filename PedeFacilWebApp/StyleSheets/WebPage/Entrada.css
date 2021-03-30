@@ -1,0 +1,186 @@
+﻿@media only screen and (max-device-width: 480px) {
+    center {
+        display: none;
+    }
+    html, body {
+        margin: 0px;
+        padding: 0px;
+        font-family: FontMenu;
+        height: 1800px;
+        width: 100%;
+        overflow: hidden;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    body {
+        background-image: url(../Images/Comidas.png);
+    }
+
+    #Nos {
+        font-size: 110px;
+        color: white;
+        font-family: helvetica;
+        width: 491px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30%;
+        text-shadow: black 2px 2px 2px;
+    }
+
+    @font-face {
+        font-family: 'MTCORSVA';
+        src: url('../Font/MTCORSVA.TTF') format('truetype');
+    }
+
+    #Textim {
+        font-size: 43px;
+        color: white;
+        font-family: "MTCORSVA";
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0%;
+        width: 468px;
+        text-align: center;
+        text-shadow: black 2px 2px 2px;
+    }
+
+    #Cadastrar {
+        line-height: 100px;
+        width: 77%;
+        margin: auto;
+        font-family: helvetica;
+        color: #ffffff;
+        font-size: 43px;
+        text-align: center;
+        text-shadow: black 2px 2px 2px;
+    }
+
+    #Entrar {
+        line-height: 100px;
+        width: 77%;
+        margin: auto;
+        font-family: helvetica;
+        color: #ffffff;
+        font-size: 43px;
+        margin-top: 53px;
+        text-align: center;
+        text-shadow: black 2px 2px 2px;
+        background: #9e0000;
+    }
+
+    #Escuro {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.50);
+        transition: all .5s linear;
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-device-width: 481px) {
+    center {
+        display: none;
+    }
+    html, body {
+        margin: 0px;
+        padding: 0px;
+        background-image: url(../Images/Comidas.png);
+        font-family: FontMenu;
+        width: 100%;
+        position: absolute;
+        z-index: 1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+    }
+
+    #fundo {
+        margin: 0px;
+        padding: 0px;
+        background-image: url(../Images/Comidas.png);
+        font-family: FontMenu;
+        width: 100%;
+        position: absolute;
+        z-index: -5;
+        filter: blur(1px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+    }
+
+    #Nos {
+        font-size: 50px;
+        color: white;
+        font-family: helvetica;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8%;
+        text-shadow: black 2px 2px 2px;
+        text-align: center;
+    }
+
+    @font-face {
+        font-family: 'MTCORSVA';
+        src: url('../Font/MTCORSVA.TTF') format('truetype');
+    }
+
+    #Textim {
+        font-size: 18px;
+        color: white;
+        font-family: "MTCORSVA";
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0%;
+        text-align: center;
+        text-shadow: black 2px 2px 2px;
+    }
+
+    #Cadastrar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: #9e0000;
+        font-family: helvetica;
+        color: #ffffff;
+        font-size: 17px;
+        text-align: center;
+        padding-top: 9px;
+        padding-bottom: 9px;
+        text-shadow: black 2px 2px 2px;
+        cursor: pointer;
+    }
+
+    #Entrar {
+        position: absolute;
+        bottom: 21px;
+        height: 7%;
+        width: 100%;
+        font-family: helvetica;
+        color: #ffffff;
+        font-size: 18px;
+        text-align: center;
+        padding-top: 23px;
+        text-shadow: black 2px 2px 2px;
+        cursor: pointer;
+    }
+
+    #Escuro {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.50);
+        transition: all .5s linear;
+        visibility: hidden;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 1;
+    }
+}

@@ -1,0 +1,59 @@
+﻿#rel {
+    display: block;
+    margin: auto;
+    width: 433px;
+    text-align: center;
+    padding-right: 120px;
+    padding-top: 20px;
+    overflow-y: auto;
+}
+
+#lblrel {
+    background: #540000;
+    color: white;
+    font-family: Helvetica;
+    height: 47px;
+    font-size: 21px;
+    text-align: left;
+    text-indent: 2em;
+    width: 622px;
+    padding-left: 30px;
+    overflow-wrap: break-word;
+    text-shadow: black 3px 4px 9px;
+    margin: auto;
+    padding-bottom: 14px;
+    padding-right: 18px;
+    border-radius: 11px;
+    padding-top: 81px;
+}
+
+span {
+    font-family: Helvetica;
+    font-size: 24px;
+    width: 155px;
+    margin: auto;
+    color: #480000;
+    padding-left: 106px;
+}
+
+select {
+    font-family: helvetica;
+    font-size: 19px;
+    color: #480000;
+    width: 265px;
+    height: 37px;
+    margin-left: 100px;
+    padding-left: 9px;
+}
+
+.botoes {
+    font-size: 19px;
+    font-family: Helvetica;
+    background: #540000;
+    color: white;
+    width: 107px;
+    border-radius: 23px;
+    height: 34px;
+    margin-left: 86px;
+    margin-top: 10px;
+}

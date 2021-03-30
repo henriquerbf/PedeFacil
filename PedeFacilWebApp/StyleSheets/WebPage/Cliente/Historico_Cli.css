@@ -1,0 +1,117 @@
+﻿@media only screen and (max-device-width: 480px) {
+    #TudoBody {
+        height: 100%;
+        /* background: #540000; */
+        background: rgb(237, 226, 214);
+        margin-top: -21px;
+    }
+
+    a {
+        color: black;
+    }
+
+    #textinho {
+        font-variant: historical-ligatures;
+        font-size: 25px;
+        line-height: 0;
+        margin-top: -15px;
+        padding-bottom: 17px;
+    }
+
+    #Tipo {
+        background: #540000;
+        line-height: 119px;
+        padding-left: 35px;
+        font-size: 55px;
+        font-family: Helvetica;
+        color: rgb(244, 242, 239);
+        letter-spacing: 7px;
+        font-variant-caps: all-small-caps;
+        padding-bottom: 37px;
+        margin-bottom: 26px;
+        margin-top: 24px;
+    }
+
+    #Comanda {
+        width: 100%;
+        padding-top: 66px;
+    }
+
+    .ProdPreco {
+        position: relative;
+        letter-spacing: -1px;
+        left: -156px;
+        font-size: 33px;
+    }
+
+    #minus {
+        border: none;
+        font-size: 35px;
+        width: 79px;
+        position: relative;
+        background: no-repeat;
+        color: #5a3636;
+        margin-top: 20px;
+    }
+
+    .ProdQuantidade {
+        position: relative;
+        left: -10px;
+        top: -28px;
+        width: 247px;
+    }
+
+    .Adicionar {
+        color: black;
+        position: relative;
+        float: right;
+        right: 392px;
+        cursor: pointer;
+        font-size: 31px;
+        margin-top: -67px;
+        margin-right: -20px;
+    }
+
+    .Pedir {
+        color: black;
+        position: relative;
+        float: right;
+        right: 173px;
+        cursor: pointer;
+        font-size: 31px;
+        margin-top: 1px;
+        margin-right: -20px;
+        margin-bottom: 97px;
+    }
+
+    .FechaCo {
+        position: relative;
+        left: 140px;
+        top: 48px;
+        font-size: 35px;
+        font-family: Helvetica;
+        background: #540000;
+        color: white;
+        width: 278px;
+        border-radius: 23px;
+        padding: 12px;
+        padding-left: 24px;
+        margin-bottom: 76px;
+    }
+
+    .PrecoTot {
+        position: relative;
+        left: -182px;
+    }
+
+    #plus {
+        border: none;
+        font-size: 31px;
+        width: 79px;
+        position: relative;
+        background: none;
+        margin-bottom: 65px;
+        top: -19px;
+        left: 17px;
+    }
+}

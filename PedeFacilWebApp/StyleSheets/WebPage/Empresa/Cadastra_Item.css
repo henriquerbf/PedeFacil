@@ -1,0 +1,169 @@
+﻿#lblSAC {
+    background: #540000;
+    color: white;
+    font-family: Helvetica;
+    height: 47px;
+    font-size: 21px;
+    text-align: left;
+    text-indent: 2em;
+    width: 622px;
+    padding-left: 30px;
+    overflow-wrap: break-word;
+    padding-top: 30px;
+    text-shadow: black 3px 4px 9px;
+    margin: auto;
+    margin-top: -40px;
+    padding-bottom: 14px;
+    padding-right: 18px;
+    border-radius: 11px;
+}
+
+#com {
+    display: block;
+    margin: auto;
+    width: 343px;
+    padding-right: 120px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: -6px;
+    padding-left: 105px;
+    font-family: Helvetica;
+    text-align: center;
+    height: calc( 100% - 200px );
+}
+
+.label {
+    font-family: Helvetica;
+    font-size: 24px;
+    width: 155px;
+    margin: auto;
+    margin-bottom: -11px;
+    color: #480000;
+    padding-left: 50px;
+}
+
+
+#MasterBody_ddlSAC {
+    font-family: helvetica;
+    font-size: 31px;
+    color: #480000;
+    width: 265px;
+    background: white;
+    display: block;
+    margin: auto;
+}
+
+option {
+    font-size: 15px;
+}
+
+#MasterBody_lblStatus {
+    font-family: Helvetica;
+    font-size: 24px;
+    width: 155px;
+    margin: auto;
+    margin-bottom: -11px;
+    color: #480000;
+    padding-left: 18px;
+    margin-left: -111px;
+}
+
+#MasterBody_btnSalvar {
+    font-size: 18px;
+    font-family: Helvetica;
+    background: #540000;
+    color: white;
+    width: 106px;
+    border-radius: 23px;
+    height: 32px;
+    margin-top: 14px;
+    margin-left: 44px;
+}
+
+#MasterBody_btnLimpar {
+    font-size: 18px;
+    font-family: Helvetica;
+    background: #540000;
+    color: white;
+    width: 106px;
+    border-radius: 23px;
+    height: 32px;
+}
+
+#MasterBody_txtNome {
+    width: 231px;
+    font-family: Helvetica;
+    height: 24px;
+    font-size: 20px;
+    margin-left: 51px;
+    color: #540000;
+}
+
+#MasterBody_txtDescricao {
+    width: 231px;
+    font-family: Helvetica;
+    height: 24px;
+    font-size: 20px;
+    margin-left: 51px;
+    color: #540000;
+}
+
+.input {
+    width: 231px;
+    font-family: Helvetica;
+    height: 24px;
+    font-size: 20px;
+    margin-left: 51px;
+    color: #540000;
+}
+
+#botoes {
+    margin: auto;
+    display: block;
+    width: 283px;
+}
+
+#MasterBody_txtSAC {
+    font-family: helvetica;
+    font-size: 31px;
+    color: #480000;
+    width: 500px;
+    resize: none;
+    top: 11px;
+    display: block;
+    margin: auto;
+}
+
+#Enviar {
+    position: relative;
+    left: 222px;
+    top: 48px;
+    font-size: 35px;
+    text-align: center;
+    font-family: Helvetica;
+    background: #540000;
+    color: white;
+    width: 278px;
+    border-radius: 23px;
+    padding: 12px;
+    padding-left: 24px;
+    margin-bottom: 76px;
+}
+
+#Bolinha {
+    width: 100% !important;
+    box-shadow: #2a2a2a -5px 1px 9px 0px !important;
+    position: absolute !important;
+    z-index: 1 !important;
+    top: 0 !important;
+    background: #ede2d6;
+    padding-top: 68px !important;
+    border-bottom: #540000 solid 4px !important;
+}
+
+#TudoBody {
+    height: 100%;
+    /* background: #540000; */
+    background: rgb(237, 226, 214);
+    padding-top: 99px;
+}

@@ -1,0 +1,123 @@
+﻿using PedeFacilLibrary.Data_Services;
+using PedeFacilLibrary.Models;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace PedeFacilLibrary.Repository
+{
+    public class RepUsuario
+    {
+        public bool Enviar(Usuario usuario_novo, DataTable retorno)
+        {
+            BancoTools banco = new BancoTools();
+
+            if (retorno.Rows.Count > 0)
+            {
+                Usuario usuario_antigo = new Usuario();
+
+                foreach (DataRow row in retorno.Rows)
+                {
+                    usuario_antigo.id_Entidade = Convert.ToInt32(row["id_Entidade"]);
+                    usuario_antigo.id_Usuario = Convert.ToInt32(row["id_Usuario"]);
+                    usuario_antigo.Login = row["Login"].ToString();
+                    usuario_antigo.Senha = row["Senha"].ToString();
+                    usuario_antigo.id_Tipo = Convert.ToInt32(row["id_Tipo"]);
+                }
+
+                dynamic[,] resultado = banco.compara_objetos(usuario_novo, usuario_antigo);
+                string tabela = "Usuario";
+                if (resultado[0, 0] == true)
+                {
+                    var query = banco.monta_update(resultado[0, 1], tabela, resultado[0, 2]);
+                    banco.ExecuteNonQuery(query);
+                }
+                return false;
+            }
+            else
+            {
+                var query = "insert into Usuario values ('@Login','@Senha',@Entidade,@Ativo,@Tipo)";
+
+                query = query.Replace("@Login", usuario_novo.Login)
+                             .Replace("@Senha", usuario_novo.Senha)
+                             .Replace("@Entidade", usuario_novo.id_Entidade.ToString())
+                             .Replace("@Ativo", usuario_novo.ic_Ativo.ToString())
+                             .Replace("@Tipo", usuario_novo.id_Tipo.ToString());
+                try
+                {
+                    banco.ExecuteNonQuery(query);
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public DataTable Select_Usuario(Usuario usuario)
+        {
+            var query = "select usuario.*, entidade.nome from usuario join entidade on usuario.id_entidade = entidade.id_entidade where usuario.login = '" + usuario.Login + "'";
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                var reader = banco.ExecuteReader(query);
+                return reader;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public DataTable Select_Email(Entidade entidade)
+        {
+            var query = "select Usuario.id_Usuario, Entidade.Nome from Usuario join Entidade on Usuario.id_Entidade = Entidade.id_Entidade where Entidade.Email = '" + entidade.Email + "'";
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                var reader = banco.ExecuteReader(query);               
+                return reader;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public bool Delete(Usuario usuario)
+        {
+            var query = "update usuario set ic_Ativo = 0 where id_Usuario = " + usuario.id_Usuario;
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                banco.ExecuteNonQuery(query);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public bool Alterar_Senha(Usuario usuario)
+        {
+            var query = "update usuario set Senha = '" + usuario.Senha + "' where id_Usuario = " + usuario.id_Usuario;
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                banco.ExecuteNonQuery(query);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+    }
+}

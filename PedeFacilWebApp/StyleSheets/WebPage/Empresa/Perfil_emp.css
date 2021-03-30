@@ -1,0 +1,55 @@
+﻿span {
+    font-family: Helvetica;
+    font-size: 24px;
+    width: 155px;
+    margin: auto;
+    margin-bottom: -11px;
+    color: #480000;
+    padding-left: 50px;
+}
+
+#perfil {
+    display: block;
+    margin: auto;
+    width: 433px;
+    text-align: center;
+    padding-right: 120px;
+    padding-top: 93px;
+    height: calc( 100% - 135px );
+    overflow-y: auto;
+}
+
+input {
+    font-family: helvetica;
+    font-size: 19px;
+    color: #480000;
+    width: 265px;
+    margin-left: 63px;
+}
+
+#botoes {
+    margin: auto;
+    display: block;
+    width: 421px;
+    margin-top: 17px;
+}
+
+#MasterBody_btnSalvar {
+    font-size: 23px;
+    font-family: Helvetica;
+    background: #540000;
+    color: white;
+    width: 135px;
+    border-radius: 23px;
+    height: 39px;
+}
+
+#MasterBody_btnLimpar {
+    font-size: 23px;
+    font-family: Helvetica;
+    background: #540000;
+    color: white;
+    width: 135px;
+    border-radius: 23px;
+    height: 39px;
+}

@@ -1,0 +1,46 @@
+﻿body {
+}
+
+center {
+    display: none;
+}
+
+#DetalhesTudo {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.69);
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+    z-index: 2;
+}
+
+#Detalhe {
+    height: 25%;
+    width: 70%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.89);
+    border-radius: 9px;
+    margin-top: 60%;
+    z-index: 1;
+}
+
+#Nada:hover{
+	cursor: pointer;
+}
+
+#NomeProduto {
+	font-family: monospace;
+	font-size: 48px;
+	width: -webkit-fill-available;
+	padding: 28px;
+}
+
+#TextoDetalhe {
+    height: 223px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 36px;
+    overflow-y: overlay;
+}

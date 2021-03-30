@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Emp.master.cs" Inherits="PedeFacilWebApp.WebPages.MasterPage.Empresa.Master_Emp" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <script>
+        function setTopo() {
+            $(window).scrollTop(0);
+        }
+        $(window).bind('scroll', setTopo);
+        function Abre() {
+            document.getElementById("Pagina").style.marginLeft = "600px";
+            document.getElementById("Escuro").style.marginLeft = "600px";
+            document.getElementById("Escuro").style.visibility = "visible";
+            document.getElementById("Escuro").style.opacity = "1";
+
+        }
+
+        function Fecha() {
+            document.getElementById("Pagina").style.marginLeft = "0px";
+            document.getElementById("Escuro").style.marginLeft = "0px";
+            document.getElementById("Escuro").style.visibility = "hidden";
+            document.getElementById("Escuro").style.opacity = "0";
+
+        }
+    </script>
+    <asp:ContentPlaceHolder ID="MasterHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div id="TudoMenu">
+    </div>
+            <div id="Pede">
+            PedeFácil
+        </div>
+    <nav id="MenuLateral">
+		<a href="Home_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/home.png" />Home</div>
+        </a>
+        <a href="Perfil_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/avatar.png" />Perfil</div>
+        </a>
+        <a href="Comandas_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/copy.png" />Comandas</div>
+        </a>
+        <a href="Cardapio_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/book.png" />Cardápio</div>
+        </a>
+        <a href="Mesas_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/mesa.png" />Mesas</div>
+        </a>
+        <a href="Relatorios_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/report.png" />Relatorios</div>
+        </a>
+        <a href="Historico_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/history.png" />Historico</div>
+        </a>
+        <a href="SAC_Emp.aspx">
+            <div class="link">
+                <img class="ico" src="../../../StyleSheets/Images/sac.png" />SAC</div>
+        </a>
+        <div id="Sair">
+            <a href="../Entrada.aspx">
+                <div class="SairLink">
+                    <img class="ico" src="../../../StyleSheets/Images/logout.png" />Sair</div>
+            </a>
+        </div>
+
+    </nav>
+    <div id="Escuro" onclick="Fecha()">
+    </div>
+    <div id="Pagina">
+        <form id="frmMasterBody" runat="server">
+            <div id="TudoBody">
+                <asp:ContentPlaceHolder ID="MasterBody" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
