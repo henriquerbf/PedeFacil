@@ -1,6 +1,7 @@
 ﻿using PedeFacilLibrary.Data_Services;
 using PedeFacilLibrary.Models;
 using System;
+using System.Data;
 using System.Collections.Generic;
 
 namespace PedeFacilAPI.Repository
@@ -36,13 +37,14 @@ namespace PedeFacilAPI.Repository
                 var Lista = new List<object>();
                 var reader = banco.ExecuteReader(query);
 
-                while (reader.Read())
+
+                foreach (DataRow row in reader.Rows)
                 {
                     Lista.Add(new Log
                     {
-                        DataHora = Convert.ToDateTime(reader["DataHora"]),
-                        id_Log = Convert.ToInt32(reader["id_Log"]),
-                        Descricao = reader["Descricao"].ToString()
+                        DataHora = Convert.ToDateTime(row["DataHora"]),
+                        id_Log = Convert.ToInt32(row["id_Log"]),
+                        Descricao = row["Descricao"].ToString()
                     });
                 }
                 return Lista;

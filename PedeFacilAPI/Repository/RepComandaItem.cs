@@ -1,6 +1,7 @@
 ﻿using PedeFacilLibrary.Data_Services;
 using PedeFacilLibrary.Models;
 using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -23,7 +24,7 @@ namespace PedeFacilAPI.Repository
                         Comanda_Item_antigo.id_Comanda = Convert.ToInt32(retorno["id_Comanda"]);
                         Comanda_Item_antigo.id_Comanda_Item = Convert.ToInt32(retorno["id_Comanda_Item"]);
                         Comanda_Item_antigo.id_Cardapio_Item = Convert.ToInt32(retorno["id_Cardapio_Item"]);
-                        Comanda_Item_antigo.qtd_Comanda_Item = Convert.ToInt32(retorno["qtd_Comanda_Item"]);
+                        Comanda_Item_antigo.qtd_Cardapio_Item = Convert.ToInt32(retorno["qtd_Comanda_Item"]);
                     }
 
                     dynamic[,] resultado = banco.compara_objetos(comanda_item_novo, Comanda_Item_antigo);
@@ -42,7 +43,7 @@ namespace PedeFacilAPI.Repository
 
                 query = query.Replace("@Comanda", comanda_item_novo.id_Comanda.ToString())
                              .Replace("@CardapioItem", comanda_item_novo.id_Cardapio_Item.ToString())
-                             .Replace("@Quantidade", comanda_item_novo.qtd_Comanda_Item.ToString());
+                             .Replace("@Quantidade", comanda_item_novo.qtd_Cardapio_Item.ToString());
 
                 try
                 {
@@ -66,14 +67,14 @@ namespace PedeFacilAPI.Repository
                 var Lista = new List<object>();
                 var reader = banco.ExecuteReader(query);
 
-                while (reader.Read())
+                foreach (DataRow row in reader.Rows)
                 {
                     Lista.Add(new Comanda_Item
                     {
-                        id_Cardapio_Item = Convert.ToInt32(reader["id_Cardapio_Item"]),
-                        id_Comanda = Convert.ToInt32(reader["id_Comanda"]),
-                        id_Comanda_Item = Convert.ToInt32(reader["id_Comanda_Item"]),
-                        qtd_Comanda_Item = Convert.ToInt32(reader["qtd_Cardapio_Item"])
+                        id_Cardapio_Item = Convert.ToInt32(row["id_Cardapio_Item"]),
+                        id_Comanda = Convert.ToInt32(row["id_Comanda"]),
+                        id_Comanda_Item = Convert.ToInt32(row["id_Comanda_Item"]),
+                        qtd_Cardapio_Item = Convert.ToInt32(row["qtd_Cardapio_Item"])
                     });
                 }
                 return Lista;
