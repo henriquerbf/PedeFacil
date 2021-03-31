@@ -60,6 +60,7 @@
     <Compile Include="Models\Comanda_Item.cs" />
     <Compile Include="Models\Cozinha.cs" />
     <Compile Include="Models\Entidade.cs" />
+    <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Mesa.cs" />
     <Compile Include="Repository\Relatorios.cs" />
     <Compile Include="Repository\RepCardapio.cs" />
