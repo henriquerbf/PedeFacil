@@ -62,6 +62,7 @@
     <Compile Include="Models\Entidade.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Mesa.cs" />
+    <Compile Include="Models\SAC_Protocolo.cs" />
     <Compile Include="Repository\Relatorios.cs" />
     <Compile Include="Repository\RepCardapio.cs" />
     <Compile Include="Repository\RepCardapioItem.cs" />
