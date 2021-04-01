@@ -9,6 +9,8 @@ namespace PedeFacilLibrary.Models
 
         public int id_Entidade { get; set; }
 
+        public Entidade Entidade { get; set; }
+
         public int id_Tipo { get; set; }
 
         [Required(ErrorMessage = "Digite um login para o usuario", AllowEmptyStrings = false)]

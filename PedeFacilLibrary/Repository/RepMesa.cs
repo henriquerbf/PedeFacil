@@ -70,6 +70,37 @@ namespace PedeFacilLibrary.Repository
             }
         }
 
+        public List<object> Select()
+        {
+            var query = "select * from Mesa";
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                var Lista = new List<object>();
+                var reader = banco.ExecuteReader(query);
+
+                foreach (DataRow row in reader.Rows)
+                {
+                    Lista.Add(new Mesa
+                    {
+                        id_Entidade = Convert.ToInt32(row["id_Entidade"]),
+                        id_Mesa = Convert.ToInt32(row["id_Mesa"]),
+                        ds_Mesa = row["ds_Mesa"].ToString()
+                    });
+                }
+                return Lista;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                banco.Fechar();
+            }
+        }
+
         public DataTable Select_Cliente(Entidade Entidade)
         {
             var query = "select * from Mesa where id_Entidade = " + Entidade.id_Entidade + " and ic_Status = 1";

@@ -70,8 +70,10 @@
     <Compile Include="Repository\RepComandaItem.cs" />
     <Compile Include="Repository\RepCozinha.cs" />
     <Compile Include="Repository\RepEntidade.cs" />
+    <Compile Include="Repository\RepLog.cs" />
     <Compile Include="Repository\RepMesa.cs" />
     <Compile Include="Repository\RepSacLog.cs" />
+    <Compile Include="Repository\RepSacProtocolo.cs" />
     <Compile Include="Repository\RepTipo.cs" />
     <Compile Include="Repository\RepUsuario.cs" />
     <Compile Include="Validations\Validacoes.cs" />

@@ -1,21 +1,20 @@
 ﻿using PedeFacilLibrary.Data_Services;
 using PedeFacilLibrary.Models;
 using System;
-using System.Collections.Generic;
 using System.Data;
+using System.Collections.Generic;
 
 namespace PedeFacilLibrary.Repository
 {
-    public class RepSacLog
+    public class RepSacProtocolo
     {
-        public bool Enviar(SAC_Log sac_log)
+        public bool Enviar(SAC_Protocolo sac_protocolo)
         {
-            var query = "insert into sac_log values ('@Mensagem', '@DataHora', @Entidade, '@Assunto')";
+            var query = "insert into SAC_Protocolo values ('@DataAbertura',@Entidade,@Tipo)";
 
-            query = query.Replace("@Mensagem", sac_log.ds_Mensagem)
-                         .Replace("@DataHora", sac_log.DataHora.ToString("yyyy-MM-dd HH:mm:ss"))
-                         .Replace("@Entidade", sac_log.id_Entidade.ToString())
-                         .Replace("@Assunto", sac_log.ds_Assunto);
+            query = query.Replace("@DataAbertura", sac_protocolo.dt_Abertura_Protocolo.ToString())
+                         .Replace("@Entidade", sac_protocolo.id_Entidade.ToString())
+                         .Replace("@Tipo", sac_protocolo.id_Tipo.ToString());
 
             try
             {
@@ -28,24 +27,25 @@ namespace PedeFacilLibrary.Repository
                 return false;
             }
         }
-        public List<SAC_Log> Select()
+
+        public List<object> Select()
         {
-            var query = "select * from SAC_Log";
+            var query = "select * from SAC_Protocolo";
             BancoTools banco = new BancoTools();
 
             try
             {
-                var Lista = new List<SAC_Log>();
+                var Lista = new List<object>();
                 var reader = banco.ExecuteReader(query);
 
                 foreach (DataRow row in reader.Rows)
                 {
-                    Lista.Add(new SAC_Log
+                    Lista.Add(new SAC_Protocolo
                     {
-                        id_SAC_Log = Convert.ToInt32(row["id_SAC_Log"]),
+                        id_Entidade = Convert.ToInt32(row["id_Entidade"]),
                         id_SAC_Protocolo = Convert.ToInt32(row["id_SAC_Protocolo"]),
-                        DataHora = Convert.ToDateTime(row["Data_Hora"]),
-                        ds_Mensagem = row["ds_Mensagem"].ToString()
+                        id_Tipo = Convert.ToInt32(row["id_Tipo"]),
+                        dt_Abertura_Protocolo = Convert.ToDateTime(row["dt_Abertura_Protocolo"])
                     });
                 }
                 return Lista;

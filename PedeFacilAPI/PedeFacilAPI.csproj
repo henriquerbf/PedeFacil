@@ -202,17 +202,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\RepCardapio.cs" />
-    <Compile Include="Repository\RepCardapioItem.cs" />
-    <Compile Include="Repository\RepComanda.cs" />
-    <Compile Include="Repository\RepComandaItem.cs" />
-    <Compile Include="Repository\RepMesa.cs" />
-    <Compile Include="Repository\RepSacLog.cs" />
-    <Compile Include="Repository\RepSacProtocolo.cs" />
-    <Compile Include="Repository\RepLog.cs" />
-    <Compile Include="Repository\RepEntidade.cs" />
-    <Compile Include="Repository\RepTipo.cs" />
-    <Compile Include="Repository\RepUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\PedeFacil.mdf" />

@@ -8,6 +8,8 @@ namespace PedeFacilLibrary.Models
         [Key]
         public int id_SAC_Log { get; set; }
 
+        public int id_SAC_Protocolo { get; set; }
+        
         public int id_Entidade { get; set; }
 
         public string ds_Mensagem { get; set; }

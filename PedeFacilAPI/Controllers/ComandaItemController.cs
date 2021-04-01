@@ -1,4 +1,4 @@
-﻿using PedeFacilAPI.Repository;
+﻿using PedeFacilLibrary.Repository;
 using PedeFacilLibrary.Data_Services;
 using PedeFacilLibrary.Models;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace PedeFacilAPI.Controllers
     {
         [HttpGet]
         [Route("Select")]
-        public List<object> Select()
+        public List<Comanda_Item> Select()
         {
             RepComandaItem rep = new RepComandaItem();
             return rep.Select();

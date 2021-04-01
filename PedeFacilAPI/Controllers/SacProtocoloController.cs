@@ -1,4 +1,4 @@
-﻿using PedeFacilAPI.Repository;
+﻿using PedeFacilLibrary.Repository;
 using PedeFacilLibrary.Models;
 using System.Collections.Generic;
 using System.Web.Http;

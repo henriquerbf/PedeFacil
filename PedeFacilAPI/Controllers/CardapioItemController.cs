@@ -1,4 +1,4 @@
-﻿using PedeFacilAPI.Repository;
+﻿using PedeFacilLibrary.Repository;
 using PedeFacilLibrary.Data_Services;
 using PedeFacilLibrary.Models;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ namespace PedeFacilAPI.Controllers
     {
         [HttpGet]
         [Route("Select")]
-        public List<object> Select_CardapioItem()
+        public List<Cardapio_Item> Select_CardapioItem()
         {
             RepCardapioItem rep = new RepCardapioItem();
             return rep.Select();

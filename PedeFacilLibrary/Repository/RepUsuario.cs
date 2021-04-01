@@ -9,6 +9,41 @@ namespace PedeFacilLibrary.Repository
 {
     public class RepUsuario
     {
+
+        public List<Usuario> Select()
+        {
+            var query = "select Usuario.*, Entidade.* from Usuario join Entidade on Entidade.id_Entidade = Usuario.id_Entidade";
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                var Lista = new List<Usuario>();
+                var reader = banco.ExecuteReader(query);
+
+                foreach (DataRow row in reader.Rows)
+                {
+                    Usuario Usuario = new Usuario();
+                    Usuario.id_Entidade = Convert.ToInt32(row["id_Entidade"]);
+                    Usuario.id_Usuario = Convert.ToInt32(row["id_Usuario"]);
+                    Usuario.Login = row["Login"].ToString();
+                    Usuario.Senha = row["Senha"].ToString();
+                    Usuario.ic_Ativo = Convert.ToByte(row["ic_Ativo"]);
+                    Usuario.Entidade.Nome = row["Nome"].ToString();
+                    Usuario.Entidade.Email = row["Email"].ToString();
+                    Usuario.Entidade.Bairro = row["Bairro"].ToString();
+                    Lista.Add(Usuario);
+                }
+                return Lista;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                banco.Fechar();
+            }
+        }
         public bool Enviar(Usuario usuario_novo, DataTable retorno)
         {
             BancoTools banco = new BancoTools();
@@ -85,6 +120,37 @@ namespace PedeFacilLibrary.Repository
             catch (Exception)
             {
                 return null;
+            }
+        }
+        public List<Usuario> Select_Email(string Email)
+        {
+            var query = "select U.Login, U.Senha, E.Nome from usuario U join entidade E on U.id_entidade = E.id_entidade where E.email = '" + Email + "'";
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                var Lista = new List<Usuario>();
+                var reader = banco.ExecuteReader(query);
+
+                foreach (DataRow row in reader.Rows)
+                {
+                    Usuario Usuario = new Usuario();
+                    Entidade Entidade = new Entidade();
+                    Usuario.Login = row["Login"].ToString();
+                    Usuario.Senha = row["Senha"].ToString();
+                    Entidade.Nome = row["Nome"].ToString();
+                    Usuario.Entidade = Entidade;
+                    Lista.Add(Usuario);
+                }
+                return Lista;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                banco.Fechar();
             }
         }
 

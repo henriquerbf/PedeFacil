@@ -131,6 +131,38 @@ namespace PedeFacilLibrary.Repository
                 return null;
             }
         }
+        public List<Comanda> Select()
+        {
+            var query = "select * from Comanda";
+            BancoTools banco = new BancoTools();
+
+            try
+            {
+                var Lista = new List<Comanda>();
+                var reader = banco.ExecuteReader(query);
+
+                foreach (DataRow row in reader.Rows)
+                {
+                    Lista.Add(new Comanda
+                    {
+                        nm_Comanda = row["nm_Comanda"].ToString(),
+                        id_Comanda = Convert.ToInt32(row["id_Comanda"]),
+                        id_Entidade = Convert.ToInt32(row["id_Entidade"]),
+                        id_Mesa = Convert.ToInt32(row["id_Mesa"])
+                    });
+                }
+                return Lista;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                banco.Fechar();
+            }
+        }
+
 
         public DataTable Select_Comanda_Cliente(Comanda comanda)
         {
